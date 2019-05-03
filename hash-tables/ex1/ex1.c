@@ -15,6 +15,8 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
       Answer *ans = malloc(sizeof(Answer *));
       ans->index_1 = i;
       ans->index_2 = index;
+
+      destroy_hash_table(ht);
       return ans;
     }
     else
@@ -23,6 +25,7 @@ Answer *get_indices_of_item_weights(int *weights, int length, int limit)
     }
   }
 
+  destroy_hash_table(ht);
   return NULL;
 }
 
